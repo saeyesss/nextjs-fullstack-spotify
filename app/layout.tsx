@@ -1,8 +1,9 @@
 import Sidebar from '@/components/Sidebar';
 import './globals.css';
-import { Figtree } from 'next/font/google';
+import { Figtree, Varela_Round } from 'next/font/google';
 
-const font = Figtree({ subsets: ['latin'] });
+// const font = Figtree({ subsets: ['latin'] });
+const font = Varela_Round({ subsets: ['latin'], weight: '400' });
 
 export const metadata = {
   title: 'Spotify - Music',
