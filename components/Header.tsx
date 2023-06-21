@@ -6,12 +6,14 @@ import { BiSearch } from 'react-icons/bi';
 import { useRouter } from 'next/navigation';
 import { twMerge } from 'tailwind-merge';
 import Button from './Button';
+import useAuthModal from '@/hooks/useAuthModal';
 interface HeaderProps {
   children: React.ReactNode;
   className?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
+  const authModal = useAuthModal();
   const router = useRouter();
   const handleLogout = () => {
     //TODO : Handle Logout
@@ -99,14 +101,14 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           <>
             <div>
               <Button
-                onClick={() => {}}
+                onClick={authModal.onOpen}
                 className='bg-transparent text-neutral-300 font-medium '
               >
                 Sign up
               </Button>
             </div>
             <div>
-              <Button onClick={() => {}} className='bg-white px-6 py-2'>
+              <Button onClick={authModal.onOpen} className='bg-white px-6 py-2'>
                 Log in
               </Button>
             </div>
