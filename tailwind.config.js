@@ -6,7 +6,14 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      dropShadow: {
+        glow: [
+          '0 0px 20px rgba(150,255,200, 1)',
+          '0 0px 45px rgba(150, 255,150, 0.8)',
+        ],
+      },
+    },
   },
   plugins: [],
 };

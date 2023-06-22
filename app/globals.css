@@ -9,3 +9,8 @@ body,
   background-color: black;
   color-scheme: dark;
 }
+
+.bounce {
+  animation: animate 1s linear infinite;
+  transform: scale(2);
+}
