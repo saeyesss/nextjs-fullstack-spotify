@@ -1,11 +1,17 @@
-import React from 'react';
 import { TbPlaylist } from 'react-icons/tb';
 import { AiOutlinePlus } from 'react-icons/ai';
 import useAuthModal from '@/hooks/useAuthModal';
-import { useUser } from '@/hooks/useUser';
 import useUploadModal from '@/hooks/useUploadModal';
+import { useUser } from '@/hooks/useUser';
 
-const Library = () => {
+import { Song } from '@/types';
+import MediaItem from './MediaItem';
+
+interface LibraryProps {
+  songs: Song[];
+}
+
+const Library: React.FC<LibraryProps> = ({ songs }) => {
   const authModal = useAuthModal();
   const { user } = useUser();
   const uploadModal = useUploadModal();
@@ -17,6 +23,7 @@ const Library = () => {
     // TODO: check for subscription
     return uploadModal.onOpen();
   };
+
   return (
     <div className='flex flex-col'>
       <div className='flex items-center justify-between px-5 py-4'>
@@ -31,7 +38,13 @@ const Library = () => {
         '
         />
       </div>
-      <div className='flex flex-col gap-y-2 mt-4 px-3'> List</div>
+      <div className='flex flex-col gap-y-2 mt-4 px-3'>
+        {songs.map((item) => (
+          <MediaItem onClick={() => {}} key={item.id} data={item}>
+            {item.title}
+          </MediaItem>
+        ))}
+      </div>
     </div>
   );
 };
