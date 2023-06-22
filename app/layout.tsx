@@ -1,11 +1,12 @@
 import './globals.css';
 import { Figtree, Varela_Round } from 'next/font/google';
 import ModalProvider from '@/providers/ModalProvider';
-import Sidebar from '@/components/Sidebar';
 import SupabaseProvider from '@/providers/SupabaseProvider';
 import UserProvider from '@/providers/UserProvider';
 import ToasterProvider from '@/providers/ToasterProvider';
 import getSongsByUserId from '@/actions/getSongsByUserId';
+import Sidebar from '@/components/Sidebar';
+import Player from '@/components/Player';
 
 const font = Figtree({ subsets: ['latin'] });
 // const font = Varela_Round({ subsets: ['latin'], weight: '400' });
@@ -30,6 +31,7 @@ export default async function RootLayout({
           <UserProvider>
             <ModalProvider />
             <Sidebar songs={userSongs}>{children}</Sidebar>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
