@@ -1,9 +1,10 @@
 import './globals.css';
+import { Figtree, Varela_Round } from 'next/font/google';
 import ModalProvider from '@/providers/ModalProvider';
 import Sidebar from '@/components/Sidebar';
 import SupabaseProvider from '@/providers/SupabaseProvider';
 import UserProvider from '@/providers/UserProvider';
-import { Figtree, Varela_Round } from 'next/font/google';
+import ToasterProvider from '@/providers/ToasterProvider';
 
 // const font = Figtree({ subsets: ['latin'] });
 const font = Varela_Round({ subsets: ['latin'], weight: '400' });
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={font.className}>
+        <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
