@@ -68,6 +68,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
         setIsLiked(true);
       }
     }
+    router.refresh();
   };
   return (
     <button

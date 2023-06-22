@@ -7,8 +7,8 @@ import UserProvider from '@/providers/UserProvider';
 import ToasterProvider from '@/providers/ToasterProvider';
 import getSongsByUserId from '@/actions/getSongsByUserId';
 
-// const font = Figtree({ subsets: ['latin'] });
-const font = Varela_Round({ subsets: ['latin'], weight: '400' });
+const font = Figtree({ subsets: ['latin'] });
+// const font = Varela_Round({ subsets: ['latin'], weight: '400' });
 export const revalidate = 0;
 export const metadata = {
   title: 'Spotify - Music',
