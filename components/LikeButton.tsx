@@ -77,7 +77,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
     >
       <Icon
         color={isLiked ? '#22c55e' : 'white'}
-        className='h-full w-full min-w-[1.5rem] min-h-[1.5rem] hover:drop-shadow-glow hover:bounce '
+        className='h-full w-full min-w-[1.5rem] min-h-[1.5rem] hover:drop-shadow-glow  hover:scale-110 duration-0 bounce'
       />
     </button>
   );

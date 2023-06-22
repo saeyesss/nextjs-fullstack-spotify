@@ -53,6 +53,9 @@ const Liked = async () => {
               >
                 Liked Songs
               </h1>
+              <p className='hidden md:block font-semibold text-sm'>
+                {Intl.NumberFormat('en-US').format(songs.length)} songs
+              </p>
             </div>
           </div>
         </div>

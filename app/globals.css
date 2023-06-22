@@ -11,6 +11,37 @@ body,
 }
 
 .bounce {
-  animation: animate 1s linear infinite;
-  transform: scale(2);
+  transition: transform 0.5s;
+  animation: shake 0.8s ease-in;
+  transform-origin: center;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
