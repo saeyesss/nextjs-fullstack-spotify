@@ -1,5 +1,14 @@
 import Stripe from 'stripe';
 
+export interface Song {
+  id: string;
+  user_id: string;
+  author: string;
+  title: string;
+  song_path: string;
+  image_path: string;
+}
+
 export interface UserDetails {
   id: string;
   first_name: string;
@@ -9,6 +18,7 @@ export interface UserDetails {
   billing_address?: Stripe.Address;
   payment_method?: Stripe.PaymentMethod[Stripe.PaymentMethod.Type];
 }
+
 export interface Product {
   id: string;
   active?: boolean;
