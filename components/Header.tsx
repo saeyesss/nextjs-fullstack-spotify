@@ -12,6 +12,8 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import useAuthModal from '@/hooks/useAuthModal';
 import { useUser } from '@/hooks/useUser';
 import Button from './Button';
+import { AiOutlinePlus } from 'react-icons/ai';
+import useUploadModal from '@/hooks/useUploadModal';
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -21,10 +23,17 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const authModal = useAuthModal();
   const router = useRouter();
+  const uploadModal = useUploadModal();
 
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
-
+  const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
+    // TODO: check for subscription
+    return uploadModal.onOpen();
+  };
   const handleLogout = async () => {
     const { error } = await supabaseClient.auth.signOut();
     // TODO: reset playing songs
@@ -113,6 +122,22 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             '
           >
             <BiSearch className='text-black' size={20} />
+          </button>
+          <button
+            onClick={onClick}
+            className='
+              rounded-full
+              p-2
+              bg-white
+              flex
+              items-center
+              justify-center
+              cursor-pointer
+              hover:opacity-75
+              transition
+            '
+          >
+            <AiOutlinePlus className='text-black' size={20} />
           </button>
         </div>
         <div className='flex justify-between items-center gap-x-4'>

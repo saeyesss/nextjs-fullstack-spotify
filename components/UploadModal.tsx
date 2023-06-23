@@ -11,6 +11,7 @@ import Modal from './Modal';
 import Input from './Input';
 import Button from './Button';
 import { useUser } from '@/hooks/useUser';
+import { BounceLoader } from 'react-spinners';
 
 const UploadModal = () => {
   const router = useRouter();
@@ -142,6 +143,13 @@ const UploadModal = () => {
         <Button disabled={isLoading} type='submit'>
           Upload
         </Button>
+        {isLoading && (
+          <BounceLoader
+            className='flex flex-col gap-y-4'
+            size={15}
+            color='#22c55e'
+          />
+        )}
       </form>
     </Modal>
   );
