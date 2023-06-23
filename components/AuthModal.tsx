@@ -1,16 +1,16 @@
 'use client';
 
-import {
-  useSessionContext,
-  useSupabaseClient,
-} from '@supabase/auth-helpers-react';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
+import {
+  useSessionContext,
+  useSupabaseClient,
+} from '@supabase/auth-helpers-react';
 
-import Modal from './Modal';
 import useAuthModal from '@/hooks/useAuthModal';
+import Modal from './Modal';
 
 const AuthModal = () => {
   const supabaseClient = useSupabaseClient();

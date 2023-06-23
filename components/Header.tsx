@@ -1,19 +1,19 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { twMerge } from 'tailwind-merge';
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
-import { HiHome } from 'react-icons/hi';
+import { AiOutlinePlus } from 'react-icons/ai';
 import { BiSearch } from 'react-icons/bi';
 import { FaUserAlt } from 'react-icons/fa';
-import { useRouter } from 'next/navigation';
-import { twMerge } from 'tailwind-merge';
+import { HiHome } from 'react-icons/hi';
 import { toast } from 'react-hot-toast';
-import { useSupabaseClient } from '@supabase/auth-helpers-react';
 
-import useAuthModal from '@/hooks/useAuthModal';
 import { useUser } from '@/hooks/useUser';
-import Button from './Button';
-import { AiOutlinePlus } from 'react-icons/ai';
+import useAuthModal from '@/hooks/useAuthModal';
 import useUploadModal from '@/hooks/useUploadModal';
+import Button from './Button';
 
 interface HeaderProps {
   children: React.ReactNode;

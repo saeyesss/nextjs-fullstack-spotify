@@ -1,20 +1,21 @@
 'use client';
+
 import { useEffect, useState } from 'react';
+import useSound from 'use-sound';
 import { BsPauseFill, BsPlayFill } from 'react-icons/bs';
+import { RiSkipBackMiniFill, RiSkipForwardMiniFill } from 'react-icons/ri';
 import {
   TiVolumeMute,
   TiVolumeUp,
   TiVolume,
   TiVolumeDown,
 } from 'react-icons/ti';
-import { RiSkipBackMiniFill, RiSkipForwardMiniFill } from 'react-icons/ri';
-import useSound from 'use-sound';
 
-import { Song } from '@/types';
+import usePlayer from '@/hooks/usePlayer';
 import MediaItem from './MediaItem';
 import LikeButton from './LikeButton';
 import Slider from './Slider';
-import usePlayer from '@/hooks/usePlayer';
+import { Song } from '@/types';
 
 interface PlayerContentProps {
   song: Song;

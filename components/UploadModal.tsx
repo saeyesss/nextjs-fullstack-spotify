@@ -1,24 +1,25 @@
 'use client';
 
 import { useState } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { useSupabaseClient } from '@supabase/auth-helpers-react';
-import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import uniqid from 'uniqid';
+import { toast } from 'react-hot-toast';
+import { BounceLoader } from 'react-spinners';
+import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+
+import { useUser } from '@/hooks/useUser';
 import useUploadModal from '@/hooks/useUploadModal';
 import Modal from './Modal';
 import Input from './Input';
 import Button from './Button';
-import { useUser } from '@/hooks/useUser';
-import { BounceLoader } from 'react-spinners';
 
 const UploadModal = () => {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
   const uploadModal = useUploadModal();
-  const { user } = useUser();
   const supabaseClient = useSupabaseClient();
+  const { user } = useUser();
+  const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
       author: '',
@@ -27,6 +28,7 @@ const UploadModal = () => {
       image: null,
     },
   });
+
   const onChange = (open: boolean) => {
     if (!open) {
       reset();
@@ -44,6 +46,7 @@ const UploadModal = () => {
         toast.error('Missing fields');
         return;
       }
+
       const uniqueid = uniqid();
 
       // Upload track

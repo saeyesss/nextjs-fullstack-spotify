@@ -3,10 +3,9 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import useAuthModal from '@/hooks/useAuthModal';
 import useUploadModal from '@/hooks/useUploadModal';
 import { useUser } from '@/hooks/useUser';
-
-import { Song } from '@/types';
-import MediaItem from './MediaItem';
 import useOnPlay from '@/hooks/useOnPlay';
+import MediaItem from './MediaItem';
+import { Song } from '@/types';
 
 interface LibraryProps {
   songs: Song[];

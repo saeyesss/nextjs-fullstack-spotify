@@ -3,12 +3,11 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { Song } from '@/types';
 import { useUser } from '@/hooks/useUser';
+import useOnPlay from '@/hooks/useOnPlay';
 import MediaItem from '@/components/MediaItem';
 import LikeButton from '@/components/LikeButton';
-import useOnPlay from '@/hooks/useOnPlay';
-// import useOnPlay from '@/hooks/useOnPlay';
+import { Song } from '@/types';
 
 interface LikedContentProps {
   songs: Song[];
@@ -18,8 +17,6 @@ const LikedContent: React.FC<LikedContentProps> = ({ songs }) => {
   const router = useRouter();
   const { isLoading, user } = useUser();
   const onPlay = useOnPlay(songs);
-
-  //   const onPlay = useOnPlay(songs);
 
   useEffect(() => {
     if (!isLoading && !user) {

@@ -1,22 +1,22 @@
 'use client';
 
-import { useSessionContext } from '@supabase/auth-helpers-react';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+import { useRouter } from 'next/navigation';
+import { useSessionContext } from '@supabase/auth-helpers-react';
 import toast from 'react-hot-toast';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
-import useAuthModal from '@/hooks/useAuthModal';
 import { useUser } from '@/hooks/useUser';
+import useAuthModal from '@/hooks/useAuthModal';
 
 interface LikeButtonProps {
   songId: string;
 }
 const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
   const router = useRouter();
-  const { supabaseClient } = useSessionContext();
   const authModal = useAuthModal();
   const { user } = useUser();
+  const { supabaseClient } = useSessionContext();
 
   const [isLiked, setIsLiked] = useState(false);
 

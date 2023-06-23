@@ -10,6 +10,15 @@ body,
   color-scheme: dark;
 }
 
+.sliderthumb {
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+}
+
 .bounce {
   transition: transform 0.5s opacity 0.5s;
   animation: shake 0.8s ease-in;
@@ -45,13 +54,4 @@ body,
   100% {
     transform: rotate(0);
   }
-}
-
-.SliderThumb {
-  display: block;
-  width: 10px;
-  height: 10px;
-
-  background-color: rgb(243, 243, 243);
-  border-radius: 10px;
 }
