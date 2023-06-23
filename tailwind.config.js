@@ -7,10 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      display: ['group-hover'],
       dropShadow: {
         glow: [
-          '0 0px 20px rgba(150,255,200, 1)',
-          '0 0px 45px rgba(150, 255,150, 0.8)',
+          '0 0 13px rgba(150,255,200, 0.3)',
+          '0 0 15px rgba(150, 255,150, 0.2)',
         ],
       },
     },
