@@ -1,1 +1,2 @@
-# [Spotify-Clone]([http://localhost:3000](https://spotify-clone-kappa-ten.vercel.app/))
+# Spotify-clone using Next.js,React.js, Supabase, PostgreSQL, Tailwind CSS, Stripe and Typescript. 
+# [https://spotify-clone-kappa-ten.vercel.app](https://spotify-clone-kappa-ten.vercel.app/)
