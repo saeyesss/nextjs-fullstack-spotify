@@ -102,6 +102,11 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({ products }) => {
       onChange={onChange}
     >
       {content}
+      <p className='text-yellow-300 text-md text-center font-bold mb-4'>
+        Use test credit card with any United States address to subscribe: <br />
+        Card number: 4242 4242 4242 4242 <br />
+        Other fields can be randomly filled.
+      </p>
     </Modal>
   );
 };
