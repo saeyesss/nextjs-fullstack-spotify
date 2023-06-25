@@ -57,7 +57,7 @@ const AuthModal = () => {
       />
       <p className='text-yellow-300 text-md text-center font-bold mb-4'>
         Use test email to access premium functionality:
-        shreyasniduagala@gmail.com
+        shreyasnidugala@gmail.com
         <br />
         Password: 111111
       </p>
