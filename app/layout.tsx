@@ -1,5 +1,7 @@
 import { Figtree, Varela_Round } from 'next/font/google';
+
 import getSongsByUserId from '@/actions/getSongsByUserId';
+import getActiveProductsWithPrices from '@/actions/getActiveProductsWithPrices';
 import ModalProvider from '@/providers/ModalProvider';
 import SupabaseProvider from '@/providers/SupabaseProvider';
 import UserProvider from '@/providers/UserProvider';
@@ -31,6 +33,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const userSongs = await getSongsByUserId();
+  const products = await getActiveProductsWithPrices();
 
   return (
     <html lang='en'>
@@ -38,7 +41,7 @@ export default async function RootLayout({
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider />
+            <ModalProvider products={products} />
             <Sidebar songs={userSongs}>{children}</Sidebar>
             <Player />
           </UserProvider>
